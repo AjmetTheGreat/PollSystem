@@ -1,15 +1,9 @@
-const urlParams = new URLSearchParams(window.location.search);
-const option1Text = urlParams.get('option1') || 'Option 1';
-const option2Text = urlParams.get('option2') || 'Option 2';
-const maxVotes = parseInt(urlParams.get('maxVotes')) || 50;
-
-let votes = { option1: 0, option2: 0 };
+let votes = {option1: 0, option2: 0};
+let maxVotes = 50; // Default value, can be changed
 
 function setOptions(label1, label2, max) {
     document.getElementById('label1').innerText = label1;
     document.getElementById('label2').innerText = label2;
-    document.getElementById('box1-fill').style.height = '0%';
-    document.getElementById('box2-fill').style.height = '0%';
     maxVotes = max;
 }
 
@@ -50,5 +44,5 @@ function resetVotes() {
     updateBoxes();
 }
 
-// Initialize poll with URL parameters
-setOptions(option1Text, option2Text, maxVotes);
+// Example initialization
+setOptions("Go to the Park", "Visit the Museum", 50);
